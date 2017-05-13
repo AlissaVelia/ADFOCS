@@ -14,11 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.RecomenAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.SoonAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.TopAdapter;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, SoonAdapter.ISourceAdapter, TopAdapter.ISourceAdapter{
+        implements NavigationView.OnNavigationItemSelectedListener, SoonAdapter.ISourceAdapter, TopAdapter.ISourceAdapter, RecomenAdapter.ISourceAdapter{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +93,9 @@ public class MainActivity extends AppCompatActivity
             fragment = new SoonFragment();
             setTitle("Coming Soon");
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_slideshow) {
+            fragment = new RecomenFragment();
+            setTitle("Recomended Movie");
 
         }
          getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commitNow();
