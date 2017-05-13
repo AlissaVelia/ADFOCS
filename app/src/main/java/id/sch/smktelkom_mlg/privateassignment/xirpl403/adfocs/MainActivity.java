@@ -3,6 +3,7 @@ package id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,8 +14,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.SoonAdapter;
+import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.TopAdapter;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, SoonAdapter.ISourceAdapter, TopAdapter.ISourceAdapter{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,24 +82,30 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        Fragment fragment = null;
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            fragment = new TopFragment();
+            setTitle("Top Rates");
         } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+            fragment = new SoonFragment();
+            setTitle("Coming Soon");
 
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
-
+         getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commitNow();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void showArticles(String id, String name, String sortBy)
+    {
+
     }
 }
