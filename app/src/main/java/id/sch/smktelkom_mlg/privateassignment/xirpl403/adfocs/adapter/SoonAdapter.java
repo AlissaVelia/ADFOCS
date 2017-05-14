@@ -16,9 +16,7 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.R;
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.model.Result;
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.model.SourcesResponse;
 
-/**
- * Created by hyuam on 12/10/2016.
- */
+
 
 public class SoonAdapter extends RecyclerView.Adapter<SoonAdapter.ViewHolder>
 {

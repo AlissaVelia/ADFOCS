@@ -12,9 +12,6 @@ import com.google.gson.JsonSyntaxException;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
-/**
- * Created by hyuam on 18/04/2017.
- */
 
 public class GsonGetRequest<T> extends Request<T>
 {
