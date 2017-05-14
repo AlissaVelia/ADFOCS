@@ -27,9 +27,7 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.service.GsonGetReq
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.service.VolleySingleton;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 
 public class SoonFragment extends Fragment {
 

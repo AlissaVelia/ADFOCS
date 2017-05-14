@@ -27,9 +27,7 @@ import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.service.GsonGetReq
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.service.VolleySingleton;
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 
 public class RecomenFragment extends Fragment {
 
@@ -64,7 +62,7 @@ public class RecomenFragment extends Fragment {
 
     private void downloadDataSources()
     {
-        String url = "https://api.themoviedb.org/3/movie/upcoming?api_key=514d065d4c32940cb075d32601dfb329";
+        String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=b56dd418a138d8facd6d2da920f65200&language=en-US&page=1";
 
         GsonGetRequest<SourcesResponse> myRequest = new GsonGetRequest<SourcesResponse>
                 (url, SourcesResponse.class, null, new Response.Listener<SourcesResponse>()

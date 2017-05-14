@@ -1,6 +1,9 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -45,6 +48,22 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SharedPreferences getProfs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                boolean isFirstStart = getProfs.getBoolean("firstStart",true);
+                if(isFirstStart){
+                    startActivity(new Intent(MainActivity.this,MyIntro.class));
+                    SharedPreferences.Editor e = getProfs.edit();
+                    e.putBoolean("firstStart",false);
+                    e.apply();
+                }
+            }
+        });
+
+        thread.start();
     }
 
     @Override
@@ -86,7 +105,11 @@ public class MainActivity extends AppCompatActivity
         Fragment fragment = null;
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_view) {
+            fragment = new MainFragment();
+            setTitle("Home");
+        }
+        else if (id == R.id.nav_camera) {
             fragment = new TopFragment();
             setTitle("Top Rates");
         } else if (id == R.id.nav_gallery) {

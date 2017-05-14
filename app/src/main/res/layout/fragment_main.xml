@@ -1,0 +1,16 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="600dp"
+    android:layout_height="match_parent"
+    tools:context="id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.MainFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="388dp"
+        android:layout_height="891dp"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:src="@drawable/cc"
+        android:layout_gravity="center" />
+</RelativeLayout>
