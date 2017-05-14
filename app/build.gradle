@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'IniKunciVe'
+            keyPassword '123456'
+            storeFile file('H:/KELAS 2/SEMESTER 2/PPB/ADFOCS/kunci.jks')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
-
     defaultConfig {
         applicationId "id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs"
         minSdkVersion 15
@@ -15,12 +22,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        buildType {
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     //    compile 'com.android.support:constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
