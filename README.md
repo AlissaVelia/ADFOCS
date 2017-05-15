@@ -1,6 +1,6 @@
 # ADFOCS
 
-# https://github.com/AlissaVelia/ADFOCS
+# https://drive.google.com/open?id=0B5c-v0fA4oVKeDFUZVNoVWRDcG8
 
 # NAMA     : ALISSA VELIA ROYHATUL JANNAH 
 # KELAS    :XIRPL 4 / 03
