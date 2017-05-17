@@ -1,14 +1,8 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -20,6 +14,7 @@ import android.view.MenuItem;
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.RecomenAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.SoonAdapter;
 import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.adapter.TopAdapter;
+import id.sch.smktelkom_mlg.privateassignment.xirpl403.adfocs.SoonFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SoonAdapter.ISourceAdapter, TopAdapter.ISourceAdapter, RecomenAdapter.ISourceAdapter{
@@ -31,15 +26,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -48,22 +34,6 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                SharedPreferences getProfs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                boolean isFirstStart = getProfs.getBoolean("firstStart",true);
-                if(isFirstStart){
-                    startActivity(new Intent(MainActivity.this,MyIntro.class));
-                    SharedPreferences.Editor e = getProfs.edit();
-                    e.putBoolean("firstStart",false);
-                    e.apply();
-                }
-            }
-        });
-
-        thread.start();
     }
 
     @Override
@@ -89,12 +59,6 @@ public class MainActivity extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-
         return super.onOptionsItemSelected(item);
     }
 

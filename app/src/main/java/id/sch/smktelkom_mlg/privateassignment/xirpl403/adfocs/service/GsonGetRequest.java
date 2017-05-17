@@ -19,7 +19,7 @@ public class GsonGetRequest<T> extends Request<T>
     private final Class<T> clazz;
     private final Map<String, String> headers;
     private final Response.Listener<T> listener;
-    
+
     /**
      * Make a GET request and return a parsed object from JSON.
      *
@@ -51,19 +51,16 @@ public class GsonGetRequest<T> extends Request<T>
     @Override
     protected Response<T> parseNetworkResponse(NetworkResponse response)
     {
-        try
-        {
+        try {
             String json = new String(
                     response.data,
                     HttpHeaderParser.parseCharset(response.headers));
             return Response.success(
                     gson.fromJson(json, clazz),
                     HttpHeaderParser.parseCacheHeaders(response));
-        } catch (UnsupportedEncodingException e)
-        {
+        } catch (UnsupportedEncodingException e) {
             return Response.error(new ParseError(e));
-        } catch (JsonSyntaxException e)
-        {
+        } catch (JsonSyntaxException e) {
             return Response.error(new ParseError(e));
         }
     }
