@@ -1,6 +1,6 @@
 # ADFOCS
 
-# https://drive.google.com/open?id=0B5c-v0fA4oVKeDFUZVNoVWRDcG8
+# https://drive.google.com/file/d/0B7DMOhQdxBO2SHVOdDdRVTRDRW8/view?usp=sharing
 
 # NAMA     : ALISSA VELIA ROYHATUL JANNAH 
 # KELAS    :XIRPL 4 / 03
