@@ -16,4 +16,3 @@
 
 # ![a1](https://cloud.githubusercontent.com/assets/22128652/26039234/63c1ac60-3942-11e7-938a-4aa7bb52aee1.PNG)
 # ![a2](https://cloud.githubusercontent.com/assets/22128652/26039232/63afaa10-3942-11e7-9e00-a8b9999ea4a4.PNG)
-# ![a4](https://cloud.githubusercontent.com/assets/22128652/26039233/63b4c1c6-3942-11e7-83e7-743d1d05c8f6.PNG)
